@@ -711,7 +711,7 @@ class FilterModule(object):
                             size = params['volume']['size']
                             access_modes = params['access']['modes']
                             persistent_volume = dict(
-                                name="{0}-volume".format(volume),
+                                name="{0}-volume".format(volume.replace("_","-")),
                                 capacity=size,
                                 access_modes=access_modes,
                                 storage=dict(
@@ -765,7 +765,7 @@ class FilterModule(object):
                         size = params['volume']['size']
                         access_modes = params['access']['modes']
                         persistent_volume_claim = dict(
-                            name="{0}-claim".format(volume),
+                            name="{0}-claim".format(volume.replace("_","-")),
                             capacity=size,
                             access_modes=access_modes)
                         persistent_volume_claims.append(persistent_volume_claim)

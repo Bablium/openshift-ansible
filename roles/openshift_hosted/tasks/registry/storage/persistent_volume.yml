@@ -1,6 +1,6 @@
 ---
 - set_fact:
-    registry_volume_claim: "{{ openshift.hosted.registry.storage.volume.name }}-claim"
+    registry_volume_claim: "{{ openshift.hosted.registry.storage.volume.name | replace('_', '-') }}-claim"
 
 - name: Determine if volume is already attached to dc/docker-registry
   command: >
